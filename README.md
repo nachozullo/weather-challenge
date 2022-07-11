@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Weather challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Summary
 
-## Available Scripts
+Las tecnologías a utilizar son NodeJS, ReactJS o React Native. En el caso de preferir RN, utilizarlo de
+manera nativa (sin expo).
 
-In the project directory, you can run:
+La siguiente prueba plantea el desarrollo de una aplicación de consulta de clima que pueda visualizar el
+pronóstico actual, próximos 5 días para la ciudad actual y de otras 5 ciudades seleccionables.
+
+Además del desarrollo específico de las funcionalidades, se requiere identificar y generar los casos de
+test que se consideren necesarios
+
+La entrega del código se espera que se entregue en algún repositorio público (Por ejemplo Github).
+Para aquellos perfiles que apliquen como FullStack, se deben completar ambas partes de la prueba. Caso
+contrario, pueden solo realizar la parte que corresponde (armar la solución entera puede ser un extra).
+Se recomienda utilizar servicio API de weather Open Weather Map, pero se puede usar utilizar cualquier
+otro de preferencia.
+
+Sugerencia de servicios/librerías:
+• Supertest (recomendado)
+• Should (recomendado)
+• ip-api (recomendado)
+
+Se pueden usar cualquier otras librerías que consideren de utilidad, aunque recomendamos el uso de
+Redux y Redux-Saga. Cualquier información relevante la deben agregar al Readme del proyecto.
+
+Tomate tu tiempo, y demuestra tus conocimientos pensando en la estructura y el trabajo en equipo.
+
+## Frontend Test
+
+Preferentemente desarrollar en React.js, como alternativa React Native (sin expo).
+
+Desarrollar una app full client-side que permita visualizar el pronóstico climático actual y de los
+próximos 5 días en la ubicación actual y permita visualizar el pronóstico de otras 5 ciudades
+seleccionables.
+
+Se debe idear y diseñar la UI que se considere mas acorde (No se valoran habilidades de diseño, sino de
+uso de componentes).
+
+Los datos deben ser consumidos de la API desarrollada (en caso de que la prueba lo requiera) o la API
+externa (Si solo se evalúa Front).
+
+## Usage
+
+Se deben definir las variables de entorno:
+
+- REACT_APP_API_URL = https://api.openweathermap.org/data/2.5
+- REACT_APP_API_KEY = API_KEY
+
+Instalar las dependencias:
+
+### `npm install`
+
+Inicializar la app:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Abrir [http://localhost:3000](http://localhost:3000) to view it in your browser.
