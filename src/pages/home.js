@@ -39,9 +39,7 @@ export const Home = () => {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      position => {
-        setLocation({ lat: position.coords.latitude, lon: position.coords.longitude });
-      },
+      position => setLocation({ lat: position.coords.latitude, lon: position.coords.longitude }),
       () => setPermissionDenied(true)
     );
   }, []);

@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import { useCityName, useWeather } from '../../api/queries';
+import { useCityName, useWeather } from '../../api';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const Container = styled.div`
   display: flex;
@@ -8,6 +10,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
+  gap: 10px;
 `;
 
 const Title = styled.h1`
@@ -35,19 +38,37 @@ const Icon = styled.img`
 `;
 
 export const CurrentWeather = ({ location }) => {
-  const { data, refetch } = useWeather(location);
-  const { data: cityData, refetch: refetchCity } = useCityName(location);
+  const { data, refetch, isFetching } = useWeather(location);
+  const {
+    data: cityData,
+    refetch: refetchCity,
+    isFetching: isFetchingCity,
+  } = useCityName(location);
 
   useEffect(() => {
     refetchCity(location);
     refetch(location);
   }, [location, refetch, refetchCity]);
 
+  if (isFetching || isFetchingCity) {
+    return (
+      <Container>
+        <Skeleton circle width={100} height={100} />
+        <Skeleton width={120} height={60} />
+        <Skeleton width={180} height={30} />
+        <Skeleton width={220} height={18} style={{ margin: '20px 0 40px' }} />
+      </Container>
+    );
+  }
+
   return (
     <Container>
       {data && (
         <>
-          <Icon src={require(`../icons/icon_${data.current.weather[0].icon}.png`)} alt='' />
+          <Icon
+            src={require(`../icons/icon_${data.current.weather[0].icon}.png`)}
+            alt='weather-icon'
+          />
           <Title>{Math.round(data?.current?.temp)}ºC</Title>
           <Subtitle>
             {cityData.city}, {cityData.country}

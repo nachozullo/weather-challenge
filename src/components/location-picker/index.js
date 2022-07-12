@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const LocationLabel = styled.p`
   cursor: pointer;
-  font-weight: ${props => (props.selected ? '800' : '200')};
+  font-weight: ${({ selected }) => (selected ? '800' : '200')};
   letter-spacing: 0.5px;
 `;
 
@@ -32,6 +32,7 @@ export const LocationPicker = ({ updateLocation }) => {
   const [selectedLocation, setSelectedLocation] = useState('current_location');
 
   const handleSelectLocation = location => {
+    console.log({ location });
     if (location === selectedLocation) return null;
     setSelectedLocation(location);
     if (location !== 'current_location') {
@@ -58,6 +59,7 @@ export const LocationPicker = ({ updateLocation }) => {
       />
       {Object.keys(LOCATIONS).map(city => (
         <Location
+          key={city}
           label={city}
           selected={selectedLocation === city}
           onSelected={() => handleSelectLocation(city)}

@@ -38,7 +38,7 @@ export const ForecastItem = ({ dt, minTemp, maxTemp, weatherCode }) => {
           weekday: 'long',
         })}
       </p>
-      <Icon src={require(`../icons/icon_${weatherCode}.png`)} alt='' />
+      <Icon src={require(`../icons/icon_${weatherCode}.png`)} alt='forecast-icon' />
       <div>
         <MaxTemperature>{Math.ceil(maxTemp)}ºC</MaxTemperature>
         <MinTemperature>{Math.round(minTemp)}ºC</MinTemperature>
