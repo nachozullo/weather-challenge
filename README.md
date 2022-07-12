@@ -2,7 +2,7 @@
 
 Demo: [https://weather-challenge-react.netlify.app/](https://weather-challenge-react.netlify.app/)
 
-### Summary
+### Challenge
 
 Las tecnologías a utilizar son NodeJS, ReactJS o React Native. En el caso de preferir RN, utilizarlo de
 manera nativa (sin expo).
@@ -43,7 +43,7 @@ uso de componentes).
 Los datos deben ser consumidos de la API desarrollada (en caso de que la prueba lo requiera) o la API
 externa (Si solo se evalúa Front).
 
-## Usage
+## Uso
 
 Se deben definir las variables de entorno:
 
@@ -63,3 +63,13 @@ Abrir [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Ejecutar casos de prueba:
 
 ### `npm test`
+
+
+## Librerias utilizadas:
+
+- react-query
+- styled-componentes
+- react-loading-skeleton
+- testing-library
+
+
