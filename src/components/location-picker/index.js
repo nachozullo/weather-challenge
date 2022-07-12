@@ -7,19 +7,24 @@ const CURRENT_LOCATION = 'current_location';
 const Container = styled.div`
   display: flex;
   flex: 1;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 15px;
   color: #fff;
   font-weight: 500;
   font-size: 18px;
+  height: 100%;
+  overflow-y: scroll;
+`;
+
+const Spacer = styled.div`
+  padding: 10px;
 `;
 
 const LocationLabel = styled.p`
   cursor: pointer;
   font-weight: ${({ selected }) => (selected ? 800 : 200)};
   letter-spacing: 0.5px;
+  margin: 10px 0;
   &:hover {
     font-weight: ${({ selected }) => (selected ? 800 : 400)};
   }
@@ -48,6 +53,7 @@ export const LocationPicker = ({ updateLocation }) => {
 
   return (
     <Container>
+      <Spacer />
       <LocationLabel
         selected={selectedLocation === CURRENT_LOCATION}
         onClick={() => handleSelectLocation(CURRENT_LOCATION)}
@@ -63,6 +69,7 @@ export const LocationPicker = ({ updateLocation }) => {
           {city}
         </LocationLabel>
       ))}
+      <Spacer />
     </Container>
   );
 };

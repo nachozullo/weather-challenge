@@ -10,6 +10,9 @@ const Container = styled.div`
   max-width: 100vw;
   overflow-x: scroll;
   padding: 10px 2px;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 const Spacer = styled.div`

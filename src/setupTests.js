@@ -3,7 +3,7 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
-import { LOCATIONS } from './components/location-picker/locations';
+import { LOCATIONS } from './utils/locations';
 import { server } from './mocks/server';
 
 const mockGeolocation = {

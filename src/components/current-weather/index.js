@@ -21,11 +21,13 @@ const Subtitle = styled.h4`
   font-size: 1.5rem;
   color: grey;
   font-weight: 500;
+  text-align: center;
 `;
 
 const DataContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   padding-top: 20px;
@@ -71,7 +73,7 @@ export const CurrentWeather = ({ location }) => {
           </Subtitle>
           <br />
           <DataContainer>
-            <span>Sensación térmica: {Math.round(data?.current?.feels_like)}ºC</span>-
+            <span>Sensación térmica: {Math.round(data?.current?.feels_like)}ºC</span>·
             <span>Humedad: {Math.round(data?.current?.humidity)}%</span>
           </DataContainer>
         </>

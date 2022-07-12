@@ -1,5 +1,7 @@
 # Weather challenge
 
+Demo: [https://weather-challenge-react.netlify.app/](https://weather-challenge-react.netlify.app/)
+
 ### Summary
 
 Las tecnologías a utilizar son NodeJS, ReactJS o React Native. En el caso de preferir RN, utilizarlo de
@@ -57,3 +59,7 @@ Inicializar la app:
 ### `npm start`
 
 Abrir [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+Ejecutar casos de prueba:
+
+### `npm test`

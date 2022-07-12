@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { LOCATIONS } from '../../components/location-picker/locations';
+import { LOCATIONS } from '../../utils/locations';
 import { useCityName } from '../use-city-name';
 import { createWrapper } from '../../tests-utils/utils';
 

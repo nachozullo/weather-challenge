@@ -5,21 +5,29 @@ import { LocationPicker } from '../components/location-picker';
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
   height: 100vh;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const LocationContainer = styled.div`
+  max-height: 100%;
   display: flex;
   flex: 1;
   background: #224f5f;
-  padding: 20px;
   min-width: 170px;
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #00649f 0%, #80d0c7 100%);
+  @media (max-width: 768px) {
+    max-height: 150px;
+    overflow-y: scroll;
+  }
 `;
 
 const RightContainer = styled.div`
+  max-height: 100%;
   display: flex;
   flex: 3;
   flex-direction: column;

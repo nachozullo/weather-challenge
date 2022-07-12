@@ -2,7 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import { Forecast } from '../index';
 import '@testing-library/jest-dom';
-import { LOCATIONS } from '../../location-picker/locations';
+import { LOCATIONS } from '../../../utils/locations';
 import { renderWithQueryClient } from '../../../tests-utils/utils';
 import { mockOneCallResponse } from '../../../mocks/mockData';
 
