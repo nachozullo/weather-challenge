@@ -2,7 +2,7 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { LocationPicker } from '../index';
 import '@testing-library/jest-dom';
-import { LOCATIONS } from '../locations';
+import { LOCATIONS } from '../../../utils/locations';
 
 const component = () => render(<LocationPicker updateLocation={jest.fn} />);
 

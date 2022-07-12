@@ -30,14 +30,15 @@ const Icon = styled.img`
   height: 80px;
 `;
 
+const getDayName = dt =>
+  new Date(dt * 1000).toLocaleString('es', {
+    weekday: 'long',
+  });
+
 export const ForecastItem = ({ dt, minTemp, maxTemp, weatherCode }) => {
   return (
     <Container>
-      <p>
-        {new Date(dt * 1000).toLocaleString('es', {
-          weekday: 'long',
-        })}
-      </p>
+      <p>{getDayName(dt)}</p>
       <Icon src={require(`../icons/icon_${weatherCode}.png`)} alt='forecast-icon' />
       <div>
         <MaxTemperature>{Math.ceil(maxTemp)}ºC</MaxTemperature>

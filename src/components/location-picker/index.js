@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { LOCATIONS } from './locations';
+import { LOCATIONS } from '../../utils/locations';
+
+const CURRENT_LOCATION = 'current_location';
 
 const Container = styled.div`
   display: flex;
@@ -16,26 +18,20 @@ const Container = styled.div`
 
 const LocationLabel = styled.p`
   cursor: pointer;
-  font-weight: ${({ selected }) => (selected ? '800' : '200')};
+  font-weight: ${({ selected }) => (selected ? 800 : 200)};
   letter-spacing: 0.5px;
+  &:hover {
+    font-weight: ${({ selected }) => (selected ? 800 : 400)};
+  }
 `;
 
-const Location = ({ label, selected, onSelected }) => {
-  return (
-    <LocationLabel selected={selected} onClick={onSelected}>
-      {label}
-    </LocationLabel>
-  );
-};
-
 export const LocationPicker = ({ updateLocation }) => {
-  const [selectedLocation, setSelectedLocation] = useState('current_location');
+  const [selectedLocation, setSelectedLocation] = useState(CURRENT_LOCATION);
 
   const handleSelectLocation = location => {
-    console.log({ location });
     if (location === selectedLocation) return null;
     setSelectedLocation(location);
-    if (location !== 'current_location') {
+    if (location !== CURRENT_LOCATION) {
       updateLocation({
         lat: LOCATIONS[location].lat,
         lon: LOCATIONS[location].lon,
@@ -52,18 +48,20 @@ export const LocationPicker = ({ updateLocation }) => {
 
   return (
     <Container>
-      <Location
-        label='Ubicación actual'
-        selected={selectedLocation === 'current_location'}
-        onSelected={() => handleSelectLocation('current_location')}
-      />
+      <LocationLabel
+        selected={selectedLocation === CURRENT_LOCATION}
+        onClick={() => handleSelectLocation(CURRENT_LOCATION)}
+      >
+        Ubicación actual
+      </LocationLabel>
       {Object.keys(LOCATIONS).map(city => (
-        <Location
+        <LocationLabel
           key={city}
-          label={city}
           selected={selectedLocation === city}
-          onSelected={() => handleSelectLocation(city)}
-        />
+          onClick={() => handleSelectLocation(city)}
+        >
+          {city}
+        </LocationLabel>
       ))}
     </Container>
   );

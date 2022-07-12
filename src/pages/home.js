@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
-import { CurrentWeather, Forecast } from '../components';
+import { CurrentWeather, Forecast, Header, Error } from '../components';
 import { LocationPicker } from '../components/location-picker';
 
 const Container = styled.div`
@@ -19,18 +19,18 @@ const LocationContainer = styled.div`
   background-image: linear-gradient(160deg, #00649f 0%, #80d0c7 100%);
 `;
 
-const WeatherContainer = styled.div`
+const RightContainer = styled.div`
   display: flex;
   flex: 3;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 `;
 
-const PermissionDenied = styled.p`
-  text-align: center;
-  color: grey;
-  padding: 20px;
+const WeatherContainer = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const Home = () => {
@@ -54,19 +54,24 @@ export const Home = () => {
       <LocationContainer>
         <LocationPicker updateLocation={handleLocationChange} />
       </LocationContainer>
-      <WeatherContainer>
-        {permissionDenied && !location ? (
-          <PermissionDenied>
-            Para obtener el clima de su ubicación actual, necesitamos que habilite los permisos de
-            ubicación del navegador.
-          </PermissionDenied>
-        ) : (
-          <>
-            <CurrentWeather location={location} />
-            <Forecast location={location} />
-          </>
-        )}
-      </WeatherContainer>
+      <RightContainer>
+        <Header />
+        <WeatherContainer>
+          {permissionDenied && !location ? (
+            <Error
+              icon={require('../components/icons/location_denied.jpeg')}
+              title='Permisos denegados'
+              text='Para obtener el clima de su ubicación actual, necesitamos que habilite los permisos de
+              ubicación del navegador.'
+            />
+          ) : (
+            <>
+              <CurrentWeather location={location} />
+              <Forecast location={location} />
+            </>
+          )}
+        </WeatherContainer>
+      </RightContainer>
     </Container>
   );
 };

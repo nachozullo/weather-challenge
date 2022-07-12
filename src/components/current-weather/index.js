@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useCityName, useWeather } from '../../api';
-import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import { Skeleton } from './skeleton';
 
 const Container = styled.div`
   display: flex;
@@ -53,10 +52,7 @@ export const CurrentWeather = ({ location }) => {
   if (isFetching || isFetchingCity) {
     return (
       <Container>
-        <Skeleton circle width={100} height={100} />
-        <Skeleton width={120} height={60} />
-        <Skeleton width={180} height={30} />
-        <Skeleton width={220} height={18} style={{ margin: '20px 0 40px' }} />
+        <Skeleton />
       </Container>
     );
   }

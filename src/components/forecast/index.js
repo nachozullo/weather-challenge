@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { useWeather } from '../../api';
 import { ForecastItem } from './forecast-item';
-import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import { Skeleton } from './skeleton';
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +20,7 @@ export const Forecast = ({ location }) => {
   const { data, isFetching } = useWeather(location);
 
   if (isFetching) {
-    return <Skeleton count={5} width={105} height={150} inline style={{ margin: 5 }} />;
+    return <Skeleton />;
   }
 
   return (
